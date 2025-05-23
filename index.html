@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Desígnio - Construção e Obras</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <script>
     tailwind.config = {
+      darkMode: 'class', // Ativa o modo escuro via classe
       theme: {
         extend: {
           colors: {
@@ -19,25 +24,34 @@
         }
       }
     }
-  </script>
+  </script>  
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
     }
   </style>
 </head>
-<body class="bg-cinzaclaro text-cinza">
+<body class="bg-cinzaclaro text-cinza dark:bg-cinza dark:text-cinzaclaro transition-colors duration-300">
 
   <!-- Navbar -->
-  <header class="bg-white shadow fixed w-full z-10">
+  <header class="bg-white dark:bg-gray-900 shadow fixed w-full z-10 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-azul">Desígnio</h1>
-      <nav class="space-x-4 text-sm">
-        <a href="#home" class="hover:text-azul">Início</a>
-        <a href="#sobre" class="hover:text-azul">Sobre</a>
-        <a href="#servicos" class="hover:text-azul">Serviços</a>
-        <a href="#portfolio" class="hover:text-azul">Portfólio</a>
-        <a href="#contato" class="hover:text-azul">Contato</a>
+      <h1 class="text-xl font-bold text-azul dark:text-cinzaclaro">Desígnio</h1>
+      <nav class="space-x-4 text-sm flex items-center">
+        <a href="#home" class="hover:text-azul dark:hover:text-cinzaclaro">Início</a>
+        <a href="#sobre" class="hover:text-azul dark:hover:text-cinzaclaro">Sobre</a>
+        <a href="#servicos" class="hover:text-azul dark:hover:text-cinzaclaro">Serviços</a>
+        <a href="#portfolio" class="hover:text-azul dark:hover:text-cinzaclaro">Portfólio</a>
+        <a href="#contato" class="hover:text-azul dark:hover:text-cinzaclaro">Contato</a>
+        
+        <!-- Botão toggle tema -->
+        <button 
+        id="theme-toggle" 
+        class="ml-6 p-2 rounded bg-cinzaclaro text-cinza dark:bg-cinza dark:text-cinzaclaro hover:bg-destaque hover:text-white transition"
+        aria-label="Alternar tema claro e escuro"
+        title="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>      
       </nav>
     </div>
   </header>
@@ -60,70 +74,94 @@
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="bg-white py-16">
-        <div class="max-w-6xl mx-auto px-4">
-        <h3 class="text-2xl font-semibold text-azul mb-8 text-center">Serviços</h3>
+    <section id="servicos" class="bg-white dark:bg-gray-800 py-16 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-2xl font-semibold text-azul dark:text-cinzaclaro mb-8 text-center">Serviços</h3>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Contratação Geral</h4>
-            <p class="text-sm">Gerenciamento total da obra, do início ao fim, com controle de orçamento e prazos.</p>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-tools text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Contratação Geral</h4>
+              <p class="text-sm">Gerenciamento total da obra, do início ao fim, com controle de orçamento e prazos.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Projetos Arquitetônicos e Complementares</h4>
-            <p class="text-sm">Desenvolvimento de projetos completos, com soluções funcionais e criativas.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-pencil-ruler text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Projetos Arquitetônicos e Complementares</h4>
+              <p class="text-sm">Desenvolvimento de projetos completos, com soluções funcionais e criativas.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Gestão de Construção</h4>
-            <p class="text-sm">Planejamento, supervisão e acompanhamento de todas as etapas da obra.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-project-diagram text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Gestão de Construção</h4>
+              <p class="text-sm">Planejamento, supervisão e acompanhamento de todas as etapas da obra.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Laudo de Impacto de Vizinhança</h4>
-            <p class="text-sm">Avaliação técnica de impactos de obras na comunidade e no entorno.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-chart-line text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Laudo de Impacto de Vizinhança</h4>
+              <p class="text-sm">Avaliação técnica de impactos de obras na comunidade e no entorno.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Engenharia Civil</h4>
-            <p class="text-sm">Execução e acompanhamento de obras com responsabilidade técnica.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-hard-hat text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Engenharia Civil</h4>
+              <p class="text-sm">Execução e acompanhamento de obras com responsabilidade técnica.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Construção Comercial</h4>
-            <p class="text-sm">Soluções completas para obras comerciais, com foco em eficiência e resultado.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-building text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Construção Comercial</h4>
+              <p class="text-sm">Soluções completas para obras comerciais, com foco em eficiência e resultado.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Reformas e Manutenções</h4>
-            <p class="text-sm">Serviços ágeis de reforma, adequação e manutenção de imóveis.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-wrench text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Reformas e Manutenções</h4>
+              <p class="text-sm">Serviços ágeis de reforma, adequação e manutenção de imóveis.</p>
             </div>
-            <div class="bg-cinzaclaro p-6 shadow rounded">
-            <h4 class="font-semibold mb-2 text-lg text-destaque">Consultoria e Assessoria Financeira</h4>
-            <p class="text-sm">Apoio técnico-financeiro para planejar e executar obras com segurança econômica.</p>
+          </div>
+          <div class="bg-cinzaclaro dark:bg-gray-700 p-6 shadow rounded flex items-start gap-3 transition-colors duration-300">
+            <i class="fas fa-handshake text-destaque text-3xl"></i>
+            <div>
+              <h4 class="font-semibold mb-2 text-lg text-destaque">Consultoria e Assessoria Financeira</h4>
+              <p class="text-sm">Apoio técnico-financeiro para planejar e executar obras com segurança econômica.</p>
             </div>
+          </div>
         </div>
-        </div>
-  </section>  
+      </div>
+    </section>  
 
     <!-- Portfólio -->
     <section id="portfolio" class="max-w-6xl mx-auto px-4 py-16">
-        <h3 class="text-2xl font-semibold text-azul mb-6 text-center">Portfólio</h3>
-        <p class="text-center mb-6">Conheça algumas das obras que executamos com excelência.</p>
-        <div class="grid md:grid-cols-3 gap-4">
+      <h3 class="text-2xl font-semibold text-azul dark:text-cinzaclaro mb-6 text-center">Portfólio</h3>
+      <p class="text-center mb-6">Conheça algumas das obras que executamos com excelência.</p>
+      <div class="grid md:grid-cols-3 gap-4">
         <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-2.jpg" alt="Projeto 1" class="w-full h-full object-cover rounded shadow" />
-        </div>
-        <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-3.jpg" alt="Projeto 2" class="w-full h-full object-cover rounded shadow" />
+          <img src="images/image-2.jpg" alt="Projeto 1" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
         <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-4.jpg" alt="Projeto 3" class="w-full h-full object-cover rounded shadow" />
+          <img src="images/image-3.jpg" alt="Projeto 2" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
         <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-5.jpg" alt="Projeto 4" class="w-full h-full object-cover rounded shadow" />
+          <img src="images/image-4.jpg" alt="Projeto 3" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
         <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-6.jpg" alt="Projeto 5" class="w-full h-full object-cover rounded shadow" />
+          <img src="images/image-5.jpg" alt="Projeto 4" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
         <div class="aspect-w-4 aspect-h-3">
-            <img src="images/image-7.jpg" alt="Projeto 6" class="w-full h-full object-cover rounded shadow" />
+          <img src="images/image-6.jpg" alt="Projeto 5" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
+        <div class="aspect-w-4 aspect-h-3">
+          <img src="images/image-7.jpg" alt="Projeto 6" draggable="false" class="w-full h-full object-cover rounded shadow" />
         </div>
+      </div>
     </section>
 
     <!-- Contato -->
@@ -145,5 +183,6 @@
     <p>&copy; 2025 Desígnio Construção. Todos os direitos reservados.</p>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
